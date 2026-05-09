@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super American Style</title>
+    <style>
+        /* インパクトのあるフォントをインポート */
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Rubik+Mono+One&display=swap');
+
+        body {
+            background-color: #001524;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* ボックスのデザイン：さらに派手に */
+        #display-box {
+            width: 350px;
+            height: 220px;
+            background-color: #ffffff;
+            border: 10px double #ff0000;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 15px 15px 0px #fb5607;
+            margin-bottom: 40px;
+            transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+        }
+
+        #message {
+            font-family: 'Rubik Mono One', sans-serif;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* ボタン：押したくなるデザイン */
+        #action-btn {
+            padding: 25px 50px;
+            font-size: 1.8rem;
+            font-family: 'Rubik Mono One', sans-serif;
+            background: linear-gradient(45deg, #ff0055, #ff5f6d);
+            color: white;
+            border: 4px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0px 10px 0px #9d0208;
+            transition: 0.1s;
+        }
+
+        #action-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0px 4px 0px #9d0208;
+        }
+
+        /* クリック後のアメリカン・トランスフォーム */
+        .transformed {
+            background-color: #ffde03 !important; /* イエロー */
+            transform: scale(1.2) rotate(5deg);
+            border: 10px solid #0336ff !important;
+            box-shadow: -15px 15px 0px #ff0266 !important;
+        }
+
+        .transformed #message {
+            font-family: 'Bungee Shade', cursive;
+            font-size: 2.8rem;
+            color: #ff0266;
+            text-shadow: 3px 3px 0px #fff;
+        }
+
+        /* 背景のフラッシュ演出用 */
+        .flash {
+            animation: bg-flash 0.2s ease-out;
+        }
+
+        @keyframes bg-flash {
+            0% { background-color: #fff; }
+            100% { background-color: #001524; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="display-box">
+        <div id="message">ARE YOU<br>READY?</div>
+    </div>
+
+    <button id="action-btn">PUSH IT!!</button>
+
+    <script>
+        const btn = document.getElementById('action-btn');
+        const box = document.getElementById('display-box');
+        const text = document.getElementById('message');
+
+        btn.addEventListener('click', () => {
+            // 文字をアメリカンな挨拶に変更
+            text.innerHTML = "WELCOME<br>BUDDY!!";
+            
+            // スタイルを切り替え
+            box.classList.add('transformed');
+            
+            // 背景を一瞬光らせる演出
+            document.body.classList.add('flash');
+            setTimeout(() => document.body.classList.remove('flash'), 200);
+
+            // ボタンもさらに煽るスタイルに
+            btn.innerText = "YEAHHH!";
+            btn.style.background = "linear-gradient(45deg, #00f5d4, #00bbf9)";
+            btn.style.boxShadow = "0px 10px 0px #0077b6";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Big Big Bomb Menu</title>
+    <style>
+        :root {
+            --diner-red: #ff1212;
+            --diner-cream: #fff5e1;
+            --diner-black: #1a1a1a;
+            --bomb-yellow: #ffcc00;
+        }
+
+        body {
+            background-color: var(--diner-black);
+            font-family: 'Arial Black', Gadget, sans-serif;
+            color: var(--diner-cream);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+        }
+
+        /* 店名を強調 */
+        h1 {
+            font-size: 4rem;
+            color: var(--bomb-yellow);
+            text-shadow: 4px 4px 0px var(--diner-red), 8px 8px 15px rgba(255,0,0,0.6);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            transform: skew(-5deg);
+        }
+
+        #menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .menu-card {
+            background-color: var(--diner-cream);
+            color: var(--diner-black);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255,18,18,0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 6px solid var(--diner-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,204,0,0.5);
+        }
+
+        .icon {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+        }
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: 900;
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--diner-red);
+            font-weight: 900;
+            background: var(--bomb-yellow);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+
+        .price::before {
+            content: "$";
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 店名を Big Big Bomb に変更 -->
+    <h1>Big Big Bomb</h1>
+    
+    <div id="menu-container"></div>
+
+    <script>
+        const menuData = [
+            {
+                "id": 1,
+                "name": "Explosive Ribeye Steak",
+                "price": 32.00,
+                "icon": "🥩"
+            },
+            {
+                "id": 2,
+                "name": "Lava Cheese Macaroni",
+                "price": 14.50,
+                "icon": "🧀"
+            },
+            {
+                "id": 3,
+                "name": "Mega Blast Burger",
+                "price": 18.00,
+                "icon": "🍔"
+            },
+            {
+                "id": 4,
+                "name": "Atomic Cherry Shake",
+                "price": 8.50,
+                "icon": "🥤"
+            }
+        ];
+
+        const container = document.getElementById('menu-container');
+
+        // JavaScriptの for を使って一覧表示
+        for (let i = 0; i < menuData.length; i++) {
+            const item = menuData[i];
+
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+
+            card.innerHTML = `
+                <div class="icon">${item.icon}</div>
+                <div class="name">${item.name}</div>
+                <div class="price">${item.price.toFixed(2)}</div>
+            `;
+
+            container.appendChild(card);
+        }
+    </script>
+</body>
+</html>

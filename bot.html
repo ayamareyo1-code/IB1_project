@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>キーワード応答ボット</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        #chat-log { border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll; margin-bottom: 10px; background: #f9f9f9; }
+        .user-msg { color: #2c3e50; font-weight: bold; }
+        .bot-msg { color: #27ae60; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>簡易カスタマーサポートボット</h2>
+    <div id="chat-log"></div>
+
+    <input type="text" id="user-input" placeholder="質問を入力してください（例：送料について）">
+    <button onclick="sendMessage()">送信</button>
+
+    <script>
+        function sendMessage() {
+            const inputElement = document.getElementById('user-input');
+            const chatLog = document.getElementById('chat-log');
+            const keyword = inputElement.value;
+
+            if (!keyword) return; // 空入力なら何もしない
+
+            // ユーザーの入力を表示
+            chatLog.innerHTML += `<div class="user-msg">あなた: ${keyword}</div>`;
+
+            // ボットの返答ロジック
+            let response = "";
+
+            if (keyword.includes("送料")) {
+                response = "全国一律500円です。";
+            } 
+            else if (keyword.includes("時間")) {
+                response = "営業時間は9:00〜18:00です。";
+            } 
+            else {
+                response = "担当者にお繋ぎします。";
+            }
+
+            // ボットの返答を表示
+            chatLog.innerHTML += `<div class="bot-msg">ボット: ${response}</div>`;
+
+            // 入力欄をクリアして下までスクロール
+            inputElement.value = "";
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        // Enterキーでも送信できるように設定
+        document.getElementById('user-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+
+</body>
+</html>

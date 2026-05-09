@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://127.0.0.1:5500/index.html# -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Big bom - 予約サイト</title>
+    <link rel="stylesheet" href="./Big Big bom - 予約サイト_files/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">Big Big bom</h1>
+    </header>
+
+    <main class="container">
+        <section class="gallery">
+            <div class="main-image">
+              <img src="./Big Big bom - 予約サイト_files/photo.png"> 
+            </div>
+            <div class="sub-images">
+                <img src="./Big Big bom - 予約サイト_files/photo.png2.jpg" alt="サブ画像1">
+                <img src="./Big Big bom - 予約サイト_files/aaa.jpg" alt="サブ画像2">
+            </div>
+        </section>
+<div class="main-image">
+    <figure>
+        <div class="main-image">
+    <figure>
+        <img src="./Big Big bom - 予約サイト_files/main_wagyu.jpg" alt="極上和牛ステーキ">
+        <figcaption class="image-desc">
+            一期一会の贅を尽くした、<br>
+            最高級A5和牛の輝き。
+        </figcaption>
+    </figure>
+</div>
+
+<div class="sub-images">
+    <figure>
+        <img src="./Big Big bom - 予約サイト_files/sub_rice.jpg" alt="こだわり白米">
+        <figcaption class="image-desc">
+            釜炊きの<br>
+            艶やかな銀シャリ。
+        </figcaption>
+    </figure>
+    <figure>
+    <img src="./Big Big bom - 予約サイト_files/sweets_set.jpg" alt="上品な生菓子とほうじ茶のセット">
+    <figcaption class="image-desc">
+        心和らぐ甘味と香ばしいお茶を。
+    </figcaption>
+  <figure></figure>
+        <section class="menu-selection">
+            <div class="menu-grid">
+                <button type="button" class="menu-card">メニュー A</button>
+                <button type="button" class="menu-card">メニュー B</button>
+            </div>
+        </section>
+  <figure></figure>
+        <section class="reservation">
+            <a href="http://127.0.0.1:5500/index.html#" class="btn-reserve">予約する</a>
+        </section>
+    </figure></div></figure></div></main>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

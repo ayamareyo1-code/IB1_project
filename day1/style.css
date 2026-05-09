@@ -1,0 +1,131 @@
+/* Google Fontsなどでよく使われる、力強いサンセリフ体とヴィンテージ感を意識 */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Permanent+Marker&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* アメリカンダイナーらしいチェッカーフラッグやヴィンテージ感を意識した背景 */
+    background-color: #e6e2d3;
+    background-image: radial-gradient(#d1ccc0 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Arial Black', sans-serif;
+    color: #222;
+    padding: 40px 20px;
+}
+
+/* ヘッダー：ネオンサイン風 */
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+header h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: #d32f2f; /* アメリカン・レッド */
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px #fff, 6px 6px 0px #0d47a1; /* 立体感と紺色 */
+    letter-spacing: 0.05em;
+    transform: rotate(-2deg); /* 少し傾けてラフさを演出 */
+}
+
+main {
+    max-width: 750px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border: 10px double #d32f2f; /* 二重線のフレーム */
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* 画像ギャラリー：ポラロイド写真風 */
+.image-gallery {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.image-item {
+    flex: 1;
+    background: #fff;
+    padding: 10px 10px 40px 10px; /* 下側に余白を作ってポラロイド風に */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
+    transform: rotate(2deg);
+}
+
+.image-item:nth-child(even) {
+    transform: rotate(-3deg); /* 交互に傾ける */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    filter: sepia(20%) contrast(110%); /* 少しヴィンテージ風の加工 */
+}
+
+/* 説明文：看板のメニュー風 */
+.description {
+    text-align: center;
+    margin-bottom: 40px;
+    border-top: 3px dashed #d32f2f;
+    border-bottom: 3px dashed #d32f2f;
+    padding: 20px 0;
+}
+
+.description p {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 予約ボタン：ダイナーの看板風 */
+.cta {
+    text-align: center;
+}
+
+.btn-reservation {
+    display: inline-block;
+    background-color: #0d47a1; /* アメリカン・ブルー */
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    padding: 20px 80px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 4px solid #fff;
+    outline: 4px solid #0d47a1;
+    border-radius: 0; /* 角はあえて丸めない */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transition: transform 0.1s;
+}
+
+.btn-reservation:hover {
+    background-color: #d32f2f;
+    outline-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+.btn-reservation:active {
+    transform: translateY(4px);
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .image-gallery {
+        flex-direction: column;
+    }
+    .image-item {
+        transform: none !important;
+    }
+}
