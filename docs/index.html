@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>バイトの本音口コミ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- Hero Section -->
+  <section
+    class="relative h-screen bg-cover bg-center"
+    style="background-image: url('heero.jpg');"
+  >
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- Header -->
+    <header class="relative z-10 flex items-center justify-between px-8 py-5">
+      <div class="flex items-center">
+        <img
+          src="hed.jpg"
+          alt="ロゴ"
+          class="w-14 h-14 rounded-full shadow-lg"
+        />
+        <h1 class="ml-4 text-3xl font-extrabold text-white drop-shadow-lg">
+          バイトの本音口コミ
+        </h1>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-[calc(100%-88px)] text-center px-6">
+      <h2
+        class="text-white text-5xl md:text-7xl font-extrabold drop-shadow-xl"
+      >
+        理不尽にご用心
+      </h2>
+
+      <p class="mt-6 text-white text-lg md:text-2xl font-medium drop-shadow-lg max-w-3xl">
+        求人票だけでは見えない"本音"を知って、
+        あなたにぴったりのアルバイトを見つけよう。
+      </p>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="bg-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Profile Image -->
+        <div class="flex justify-center">
+          <img
+            src="profile.jpg"
+            alt="プロフィール"
+            class="w-72 h-72 rounded-full object-cover shadow-2xl border-8 border-orange-300"
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+
+          <span class="inline-block bg-orange-100 text-orange-600 font-semibold px-4 py-2 rounded-full mb-5">
+            私たちの想い
+          </span>
+
+          <h2 class="text-4xl font-extrabold text-gray-800 leading-tight mb-6">
+            アルバイト選びで、
+            <span class="text-orange-500">もう悩まない。</span>
+          </h2>
+
+          <p class="text-lg text-gray-600 leading-9 mb-6">
+            「求人票では働きやすそうだったのに、実際は人間関係が最悪だった。」
+            「シフトが自由と聞いていたのに全然休めない。」
+            <br><br>
+            そんな<strong>アルバイト選びのミスマッチ</strong>を少しでも減らしたい。
+            それが<strong>『バイトの本音口コミ』</strong>を作った理由です。
+          </p>
+
+          <p class="text-lg text-gray-600 leading-9 mb-6">
+            実際に働いた人のリアルな口コミを知ることで、
+            ブラックバイトを避け、
+            自分に合った職場を安心して選ぶことができます。
+          </p>
+
+          <div class="bg-orange-50 rounded-2xl p-6 shadow-md border-l-8 border-orange-400">
+
+            <h3 class="text-2xl font-bold text-orange-500 mb-3">
+              学生も、お店も、どちらも笑顔に。
+            </h3>
+
+            <p class="text-gray-700 leading-8">
+              自分に合ったアルバイトを選べれば、
+              学生は安心して長く働くことができ、
+              お店も意欲あるスタッフと出会えます。
+              <br><br>
+              私たちは<strong>「学生側」と「お店側」のどちらにとってもWin-Winな出会い</strong>を
+              本音の口コミで応援します。
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
+<!-- 人気のアルバイト口コミ Section -->
+<section class="py-20 bg-orange-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- セクションタイトル -->
+    <div class="text-center mb-12">
+      <span class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full font-semibold">
+        人気のアルバイト口コミ
+      </span>
+
+      <h2 class="text-4xl font-extrabold text-gray-800 mt-4">
+        気になるアルバイト先をチェック！
+      </h2>
+
+      <p class="text-gray-600 mt-4 text-lg">
+        実際に働いた人の口コミを参考に、自分に合った職場を見つけましょう。
+      </p>
+    </div>
+
+    <!-- カード表示エリア -->
+    <div
+      id="reviewCards"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+    ></div>
+
+  </div>
+</section>
+
+<script>
+const reviewData = [
+  {image: "smile.jpg",
+   store: "スマイルコンビニ",
+    category: "コンビニ",
+    rating: "★★★★☆",
+    reviews: "口コミ 128件",
+   description:""
+  },
+  {
+    image: "sunny.jpg",
+    store: "suuunya",
+    category: "カフェ",
+    rating: "★★★★★",
+    reviews: "口コミ 95件",
+   description:""
+  },
+  {
+    image: "market.jpg",
+    store: "フレッシュマーケット",
+    category: "スーパー",
+    rating: "★★★☆☆",
+    reviews: "口コミ 74件",
+    description:""
+  },
+  {
+    image: "sakab.jpg",
+    store: "和み酒場 ",
+    category: "居酒屋",
+    rating: "★★★★☆",
+    reviews: "口コミ 143件",
+  description:""
+  },
+  {
+    image: "lumina.jpg",
+    store: "ルミナブックス",
+    category: "書店",
+    rating: "★★★★★",
+    reviews: "口コミ 62件",
+   description:""
+  },
+  {
+    image: "kcokco.jpg",
+    store: "kcokco wear",
+    category: "アパレル",
+    rating: "★★★★☆",
+    reviews: "口コミ 89件",
+   description:""
+  }
+];
+
+const reviewCards = document.getElementById("reviewCards");
+
+reviewCards.innerHTML = reviewData.map(item => `
+  <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+
+    <img
+      src="${item.image}"
+      alt="${item.category}"
+      class="w-full h-56 object-cover"
+    >
+
+    <div class="p-6">
+
+      <span class="inline-block bg-orange-100 text-orange-600 text-sm font-semibold px-3 py-1 rounded-full">
+        ${item.category}
+      </span>
+
+      <h3 class="text-2xl font-bold text-gray-800 mt-4">
+        ${item.store}
+      </h3>
+
+      <div class="flex items-center justify-between mt-4">
+        <span class="text-yellow-500 font-bold text-lg">
+          ${item.rating}
+        </span>
+
+        <span class="text-gray-500 text-sm">
+          ${item.reviews}
+        </span>
+      </div>
+
+      <p class="text-gray-600 leading-7 mt-4">
+        ${item.description}
+      </p>
+
+      <button
+        class="mt-6 w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition duration-300"
+      >
+        口コミを見る
+      </button>
+
+    </div>
+
+  </div>
+`).join("");
+</script>
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-r from-orange-400 to-orange-500">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+      あなたの口コミが、誰かの未来を変える。
+    </h2>
+
+    <p class="text-lg md:text-xl text-orange-100 leading-8 max-w-3xl mx-auto mb-10">
+      アルバイト選びで失敗した経験も、働いて良かった経験も、
+      次にアルバイトを探す学生にとって大切な情報です。
+      <br><br>
+      気になる職場の口コミを見たり、
+      あなた自身の体験を投稿して、
+      みんなでより良いアルバイト選びを応援しましょう。
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+
+      <button
+        class="bg-white text-orange-500 font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:scale-105 hover:bg-orange-50 transition duration-300"
+      >
+        🔍 口コミを閲覧する
+      </button>
+
+      <button
+        class="bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-orange-700 hover:scale-105 transition duration-300 border-2 border-white"
+      >
+        ✍️ 口コミを投稿する
+      </button>
+
+    </div>
+
+  </div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- サイト情報 -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">
+                    バイトの本音口コミ
+                </h3>
+
+                <p class="text-gray-400 leading-7">
+                    学生が安心して働けるアルバイト探しを、
+                    リアルな口コミでサポートします。
+                </p>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="font-bold mb-4">MENU</h4>
+
+                <ul class="space-y-3">
+                    <li><a href="#">お問い合わせ</a></li>
+                    <li><a href="#">よくある質問</a></li>
+                    <li><a href="#">利用規約</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+
+            <!-- SNS -->
+            <div>
+
+                <h4 class="font-bold mb-4">FOLLOW US</h4>
+
+                <div class="flex gap-5 text-3xl">
+
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr class="my-8 border-gray-700">
+
+        <p class="text-center text-gray-500">
+            © 2026 バイトの本音口コミ All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
